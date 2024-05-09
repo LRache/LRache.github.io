@@ -5,6 +5,7 @@ const Status = Object.freeze(
         NORMAL: 2,
         DELAY: 3,
         CANCEL: 4,
+        PLANNING: 5,
     }
 )
 
@@ -15,6 +16,7 @@ const stringMap = new Map(
         [Status.NORMAL, "正常"],
         [Status.DELAY, "延期"],
         [Status.CANCEL, "取消"],
+        [Status.PLANNING, "计划中"],
     ]
 );
 
@@ -29,14 +31,14 @@ const classMap = new Map(
 );
 
 const tableData = [
-    {"des": "浙江工业大学", "date": "2023年10月21日", "status": Status.FINISHED, "note": ""},
-    {"des": "浙江理工大学", "date": "2023年10月26日", "status": Status.FINISHED, "note": ""},
-    {"des": "中国计量大学", "date": "2023年11月15日", "status": Status.FINISHED, "note": ""},
-    {"des": "浙江音乐学院", "date": "2023年11月16日", "status": Status.FINISHED, "note": ""},
-    {"des": "浙江财经大学", "date": "2024年4月18日", "status": Status.FINISHED, "note": ""},
-    {"des": "浙江师范大学", "date": "2024年4月18日", "status": Status.FINISHED, "note": ""},
-    {"des": "哈尔滨工业大学", "date": "2024年5月3日", "status": Status.FINISHED, "note": ""},
-    {"des": "哈尔滨工程大学", "date": "2024年5月3日", "status": Status.FINISHED, "note": ""},
+    {"des": "浙江工业大学", "date": "2023年10月21日", "city": "浙江杭州","status": Status.FINISHED, "note": ""},
+    {"des": "浙江理工大学", "date": "2023年10月26日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+    {"des": "中国计量大学", "date": "2023年11月15日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+    {"des": "浙江音乐学院", "date": "2023年11月16日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+    {"des": "浙江财经大学", "date": "2024年4月18日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+    {"des": "浙江师范大学", "date": "2024年4月18日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+    {"des": "哈尔滨工业大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
+    {"des": "哈尔滨工程大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
 ];
 
 const tableHeaders = ["des", "date", "status"]
@@ -52,6 +54,10 @@ function fillTable(data) {
 
         td = document.createElement('td');
         td.textContent = row.des;
+        tr.appendChild(td);
+
+        td = document.createElement('td');
+        td.textContent = row.city;
         tr.appendChild(td);
 
         td = document.createElement('td');
