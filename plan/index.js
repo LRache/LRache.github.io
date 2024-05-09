@@ -47,7 +47,7 @@ const tableData = [
 const tableHeaders = ["des", "date", "status"]
 
 function fillTable(data) {
-    const tableBody = document.querySelector('#myTable tbody');
+    const tableBody = document.querySelector('#tripTable tbody');
     var i = 1;
     data.forEach(row => {
         const tr = document.createElement('tr');
