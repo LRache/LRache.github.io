@@ -29,8 +29,10 @@ const classMap = new Map(
 );
 
 const tableData = [
-    {"des": "浙江工业大学", "date": "2023年10月", "status": Status.FINISHED, "note": ""},
-    {"des": "中国计量大学", "date": "2023年10月", "status": Status.NORMAL, "note": ""}
+    {"des": "浙江工业大学", "date": "2023年10月21日", "status": Status.FINISHED, "note": ""},
+    {"des": "浙江理工大学", "date": "2023年10月26日", "status": Status.FINISHED, "note": ""},
+    {"des": "中国计量大学", "date": "2023年11月15日", "status": Status.FINISHED, "note": ""},
+    {"des": "浙江音乐学院", "date": "2023年11月16日", "status": Status.FINISHED, "note": ""},
 ];
 
 const tableHeaders = ["des", "date", "status"]
