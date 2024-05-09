@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js"></script>
+    <title>Dynamic 5x5 Table with Fixed Header Distance</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            background-color: #2f2f2f;
+        }
+        h1 {
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px 0; /* Spacing between title and table */
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 3px solid #fff; /* 更明显的外围边框 */
+            border-radius: 5px; /* 维持圆角 */
+            overflow: hidden; /* 防止子元素溢出 */
+        }
+        th, td {
+            height: 50px;
+            color: white; 
+            border: 1px solid white;
+            text-align: center;
+            vertical-align: middle;
+            font-family: Microsoft YaHei;
+        }
+        th {
+            background-color: black;
+        }
+        tr:nth-child(odd) { /* 奇数行 */
+            background-color: #171e2d;
+        }
+
+        tr:nth-child(even) { /* 偶数行 */
+            background-color: #1c2334; /* 深灰色 */
+        }
+
+        .status-delay {
+            color: orange;
+        }
+        .status-normal {
+            color: #4ae979;
+        }
+        .status-finished {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>电兵的入侵计划</h1>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th style="width: 60px;">序号</th>
+                <th style="width: 300px;">目的地</th>
+                <th style="width: 150px;">时间</th>
+                <th style="width: 150px;">状态</th>
+                <th style="width: 200px;">备注</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
