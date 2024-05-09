@@ -27,6 +27,7 @@ const classMap = new Map(
         [Status.NORMAL, "status-normal"],
         [Status.DELAY, "status-delay"],
         [Status.CANCEL, "cancel"],
+        [Status.PLANNING, "status-normal"],
     ]
 );
 
@@ -39,6 +40,7 @@ const tableData = [
     {"des": "浙江师范大学", "date": "2024年4月18日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
     {"des": "哈尔滨工业大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
     {"des": "哈尔滨工程大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
+    {"des": "苏州大学", "date": "2024年7月", "city": "江苏苏州", "status": Status.PLANNING, "note": ""},
 ];
 
 const tableHeaders = ["des", "date", "status"]
@@ -50,18 +52,22 @@ function fillTable(data) {
         const tr = document.createElement('tr');
         var td = document.createElement('td');
         td.textContent = i++;
+        td.classList.add(classMap.get(row.status))
         tr.appendChild(td);
 
         td = document.createElement('td');
         td.textContent = row.des;
+        td.classList.add(classMap.get(row.status))
         tr.appendChild(td);
 
         td = document.createElement('td');
         td.textContent = row.city;
+        td.classList.add(classMap.get(row.status))
         tr.appendChild(td);
 
         td = document.createElement('td');
         td.textContent = row.date;
+        td.classList.add(classMap.get(row.status))
         tr.appendChild(td);
 
         td = document.createElement('td');
@@ -71,6 +77,7 @@ function fillTable(data) {
 
         td = document.createElement('td');
         td.textContent = row.note;
+        td.classList.add(classMap.get(row.status))
         tr.appendChild(td);
 
         tableBody.appendChild(tr);
