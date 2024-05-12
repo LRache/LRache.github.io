@@ -30,21 +30,19 @@ const classMap = new Map(
         [Status.PLANNING, "status-normal"],
     ]
 );
-
-const tableData = [
-    {"des": "浙江工业大学", "date": "2023年10月21日", "city": "浙江杭州","status": Status.FINISHED, "note": ""},
-    {"des": "浙江理工大学", "date": "2023年10月26日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
-    {"des": "中国计量大学", "date": "2023年11月15日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
-    {"des": "浙江音乐学院", "date": "2023年11月16日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
-    {"des": "浙江财经大学", "date": "2024年4月18日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
-    {"des": "杭州师范大学", "date": "2024年4月18日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
-    {"des": "哈尔滨工业大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
-    {"des": "哈尔滨工程大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
-    {"des": "苏州大学", "date": "2024年7月", "city": "江苏苏州", "status": Status.PLANNING, "note": ""},
-    {"des": "浙江工业大学", "date": "2024年7月", "city": "浙江杭州", "status": Status.PLANNING, "note": ""},
-];
-
-const tableHeaders = ["des", "date", "status"]
+let tableData = []
+// const tableData = [
+//     {"des": "浙江工业大学", "date": "2023年10月21日", "city": "浙江杭州","status": Status.FINISHED, "note": ""},
+//     {"des": "浙江理工大学", "date": "2023年10月26日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+//     {"des": "中国计量大学", "date": "2023年11月15日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+//     {"des": "浙江音乐学院", "date": "2023年11月16日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+//     {"des": "浙江财经大学", "date": "2024年4月18日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+//     {"des": "杭州师范大学", "date": "2024年4月18日", "city": "浙江杭州", "status": Status.FINISHED, "note": ""},
+//     {"des": "哈尔滨工业大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
+//     {"des": "哈尔滨工程大学", "date": "2024年5月3日", "city": "黑龙江哈尔滨", "status": Status.FINISHED, "note": ""},
+//     {"des": "苏州大学", "date": "2024年7月", "city": "江苏苏州", "status": Status.PLANNING, "note": ""},
+//     {"des": "浙江工业大学", "date": "2024年7月", "city": "浙江杭州", "status": Status.PLANNING, "note": ""},
+// ];
 
 function fillTable(data) {
     const tableBody = document.querySelector('#tripTable tbody');
@@ -86,5 +84,9 @@ function fillTable(data) {
 }
 
 window.onload = () => {
-    fillTable(tableData);
+    fetch('http://kx.monblog.top:16382/tripplan')
+    .then(response => response.json())
+    .then(data => {
+        fillTable(data);
+    })
 };
