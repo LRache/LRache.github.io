@@ -84,7 +84,7 @@ function fillTable(data) {
 }
 
 window.onload = () => {
-    fetch('http://kx.monblog.top:16382/tripplan')
+    fetch('https://kx.monblog.top:16382/tripplan')
     .then(response => response.json())
     .then(data => {
         fillTable(data);
