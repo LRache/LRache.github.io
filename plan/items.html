@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>修改Items</title>
+<link rel="stylesheet" href="./stylesheet.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 60px;">序号</th>
+                <th style="width: 300px;">目的地</th>
+                <th style="width: 150px;">城市</th>
+                <th style="width: 150px;">时间</th>
+                <th style="width: 150px;">状态</th>
+                <th style="width: 200px;">备注</th>
+            </tr>
+        </thead>
+        <tr>
+            <form action="http://localhost:8080/tripplan" method="POST" class="horizontal-form"></form>
+                <td><input type="number" id="idInput" name="id" min="1" value="1"></td>
+                <td><input type="text" id="desInput" name="des"></td>
+                <td><input type="text" id="cityInput" name="city"></td>
+                <td><input type="text" id="dateInput" name="date"></td>
+                <td>
+                    <select name="status" id="statusInput">
+                        <option value="1">已完成</option>
+                        <option value="2">进行中</option>
+                        <option value="3" selected>正常</option>
+                        <option value="4">延期</option>
+                        <option value="5">取消</option>
+                        <option value="6">计划中</option>
+                    </select>
+                </td>
+                <td><input type="submit" value="添加"></td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>
