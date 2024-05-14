@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>修改Items</title>
-<link rel="stylesheet" href="./stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改Items</title>
+    <link rel="stylesheet" href="./stylesheet.css">
 </head>
 <body>
     <table>
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tr>
-            <form action="http://localhost:8080/tripplan" method="POST" class="horizontal-form"></form>
+            <form action="https://localhost:8080/tripplan" method="POST" id="newItemForm"></form>
                 <td><input type="number" id="idInput" name="id" min="1" value="1"></td>
                 <td><input type="text" id="desInput" name="des"></td>
                 <td><input type="text" id="cityInput" name="city"></td>
@@ -38,5 +38,6 @@
             </form>
         </tr>
     </table>
+    <script src="./items.js"></script>
 </body>
 </html>
