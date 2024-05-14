@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./stylesheet.css">
 </head>
 <body>
-    <table>
+    <table class="MainTable">
         <thead>
             <tr>
                 <th style="width: 60px;">序号</th>
@@ -16,27 +16,37 @@
                 <th style="width: 150px;">时间</th>
                 <th style="width: 150px;">状态</th>
                 <th style="width: 200px;">备注</th>
+                <th style="width: 100px;">操作</th>
             </tr>
         </thead>
-        <tr>
-            <form action="https://localhost:8080/tripplan" method="POST" id="newItemForm"></form>
-                <td><input type="number" id="idInput" name="id" min="1" value="1"></td>
-                <td><input type="text" id="desInput" name="des"></td>
-                <td><input type="text" id="cityInput" name="city"></td>
-                <td><input type="text" id="dateInput" name="date"></td>
-                <td>
-                    <select name="status" id="statusInput">
-                        <option value="1">已完成</option>
-                        <option value="2">进行中</option>
-                        <option value="3" selected>正常</option>
-                        <option value="4">延期</option>
-                        <option value="5">取消</option>
-                        <option value="6">计划中</option>
-                    </select>
+        <tbody>
+            <tr>
+                <td colspan="7">
+                    <form action="https://localhost:8080/tripplan" method="POST" id="newItemForm">
+                        <table>
+                            <tr>
+                                <td style="width: 60px;"><input type="number" name="id" min="1" value="1"></td>
+                                <td style="width: 300px;"><input type="text" name="des"></td>
+                                <td style="width: 150px;"><input type="text" name="city"></td>
+                                <td style="width: 150px;"><input type="text" name="date"></td>
+                                <td style="width: 150px;">
+                                    <select name="status">
+                                        <option value="1">已完成</option>
+                                        <option value="2">进行中</option>
+                                        <option value="3" selected>正常</option>
+                                        <option value="4">延期</option>
+                                        <option value="5">取消</option>
+                                        <option value="6">计划中</option>
+                                    </select>
+                                </td>
+                                <td style="width: 200px;"><input type="text" name="note"></td>
+                                <td style="width: 100px;"><input type="submit" value="添加"></td>
+                            </tr>
+                        </table>
+                    </form>
                 </td>
-                <td><input type="submit" value="添加"></td>
-            </form>
-        </tr>
+            </tr>
+        </tbody>
     </table>
     <script src="./items.js"></script>
 </body>

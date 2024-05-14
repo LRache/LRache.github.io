@@ -12,22 +12,23 @@ h1 {
     text-align: center;
     margin: 20px 0;
 }
-table {
+.MainTable {
     border-collapse: separate;
     border-spacing: 0;
     border: 3px solid #fff;
     border-radius: 5px;
     overflow: hidden;
 }
+
 th, td {
     height: 50px;
     color: white; 
-    border: 1px solid white;
     text-align: center;
     vertical-align: middle;
-    font-family: Microsoft YaHei;
+    font-family: Microsoft YaHei, serif;
 }
 th {
+    border: 1px solid white;
     background-color: black;
 }
 tr:nth-child(odd) { /* 奇数行 */
@@ -56,7 +57,7 @@ select
     width: 70%;
     height: 70%;
     background-color: #2f2f2f;
-    font-family: Microsoft YaHei;
+    font-family: Microsoft YaHei, serif;
     border-radius: 5px;
     border: 1px solid white;
     outline: none;
@@ -67,7 +68,7 @@ input[type="submit"] {
     width: 70%;
     height: 70%;
     background-color: #2f2f2f;
-    font-family: Microsoft YaHei;
+    font-family: Microsoft YaHei, serif;
     border-radius: 5px;
     border: 1px solid white;
 }
@@ -76,9 +77,9 @@ input[type="submit"]:hover {
     background-color: black;
 }
 
-input[type="submit"]:active
+input[type="submit"]:active,
 input[type="text"]:active,
 input[type="number"]:active
 {
-    color: gray;
+    color: rgb(128, 128, 128);
 }
